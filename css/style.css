@@ -1,15 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 body {
@@ -34,7 +43,9 @@ body {
 }
 
 #grid {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   max-width: 400px;
@@ -50,17 +61,42 @@ body {
   text-align: center;
   font-size: 3rem;
   cursor: pointer;
-  transform: rotateY(180deg);
-  transform-style: preserve-3d;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  -o-transition: transform 0.8s;
   transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+
+@media (max-width: 500px) {
+  .card {
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: 5px;
+    font-size: 2.5rem;
+  }
+
+  .button {
+    animation: slidebg 10s infinite;
+  }
 }
 
 .card.flipped {
   background-color: #c07446;
   font-size: 0;
-  transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  -o-transition: transform 0.8s;
   transition: transform 0.8s;
-  transform-style: preserve-3d;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 #score {
@@ -73,6 +109,35 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background-image: -webkit-gradient(linear,
+      left top, right top,
+      from(#E7484F),
+      color-stop(16.65%, #E7484F),
+      color-stop(16.65%, #F68B1D),
+      color-stop(33.3%, #F68B1D),
+      color-stop(33.3%, #FCED00),
+      color-stop(49.95%, #FCED00),
+      color-stop(49.95%, #009E4F),
+      color-stop(66.6%, #009E4F),
+      color-stop(66.6%, #00AAC3),
+      color-stop(83.25%, #00AAC3),
+      color-stop(83.25%, #732982),
+      color-stop(100%, #732982),
+      to(#E7484F));
+  background-image: -o-linear-gradient(left,
+      #E7484F,
+      #E7484F 16.65%,
+      #F68B1D 16.65%,
+      #F68B1D 33.3%,
+      #FCED00 33.3%,
+      #FCED00 49.95%,
+      #009E4F 49.95%,
+      #009E4F 66.6%,
+      #00AAC3 66.6%,
+      #00AAC3 83.25%,
+      #732982 83.25%,
+      #732982 100%,
+      #E7484F 100%);
   background-image: linear-gradient(to right,
       #E7484F,
       #E7484F 16.65%,
@@ -87,7 +152,14 @@ body {
       #732982 83.25%,
       #732982 100%,
       #E7484F 100%);
-  animation: slidebg 6s linear infinite;
+  -webkit-animation: slidebg 3s linear infinite;
+          animation: slidebg 3s linear infinite;
+}
+
+@-webkit-keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
 }
 
 @keyframes slidebg {
@@ -98,12 +170,20 @@ body {
 
 .button:hover,
 button:active {
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
 }
 
 .button:active {
-  transform: scale(.7);
+  -webkit-transform: scale(.7);
+      -ms-transform: scale(.7);
+          transform: scale(.7);
+  -webkit-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
 }
 
