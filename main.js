@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function () {
+
 const icons = ['😈', '🐼', '🧝🏻‍♀️', '🪼', '🐲', '⛄️', '🧜🏻‍♀️', '💀', '🎃', '🦄'];
 const icons2 = [...icons];
 
@@ -175,3 +177,5 @@ function showFinalScore() {
     startGame();
   }
 }
+
+});
