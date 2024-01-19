@@ -2,16 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Игра в пары</title>
-
-    <script src="main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Card Game</title>
+  <link rel="icon" href="favicon.svg" type="image/svg">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="main.js"></script>
 </head>
 
-<body>
-
+<body class="page">
+  <h1 class="title">Memory Card Game 💭</h1>
+  <div class="game-container">
+    <div class="msg">Your game will start in <span class="time"></span> seconds!</div>
+    <div class="gameTimer">Your game will end in <span class="time"></span> seconds!</div>
+    <div id="grid"></div>
+    <div id="score"></div>
+    <button class="button">Start / Restart</button>
+  </div>
 </body>
 
 </html>
