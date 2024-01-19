@@ -27,7 +27,7 @@ body {
 
 .page {
   margin: 0 auto;
-  padding: 100px 15px;
+  padding: 70px 15px;
   background-image: url("/background.jpeg");
   font-family: 'Comfortaa', sans-serif;
   font-style: normal;
@@ -53,6 +53,9 @@ body {
 }
 
 .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 4.5rem;
   width: 4.5rem;
   padding: 10px;
@@ -82,6 +85,10 @@ body {
 
   .button {
     animation: slidebg 10s infinite;
+  }
+
+  .page {
+    padding: 50px 15px;
   }
 }
 
